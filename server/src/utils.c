@@ -54,10 +54,9 @@ int esperar_cliente(int socket_servidor)
 
     // Aceptamos un nuevo cliente
     int socket_cliente;
-    int error;
     // Aceptamos un nuevo cliente
-    error = accept(socket_servidor, NULL, NULL);
-    if (error == -1) {
+    socket_cliente = accept(socket_servidor, NULL, NULL);
+    if (socket_cliente == -1) {
         log_error(logger, "Error al aceptar el cliente");
         abort();
     }
